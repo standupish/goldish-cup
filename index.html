@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goldish Cup Hall of Fame</title>
+<meta name="description" content="Every viewer who called the winning letter on The Sign Spin, live on Stand-Up-ish. It's gold... ish.">
+<meta property="og:title" content="The Goldish Cup Hall of Fame">
+<meta property="og:description" content="Call the winning letter on The Sign Spin, live on Stand-Up-ish. Win a cup. It's gold... ish.">
+<meta property="og:image" content="https://eugenekenny.github.io/goldish-cup/social.jpg">
+<meta property="og:url" content="https://eugenekenny.github.io/goldish-cup/">
+<link rel="icon" href="cup.png">
+<style>
+  :root { --bg:#140b09; --panel:#1f1310; --line:#4a3326; --gold:#ffcd78; --cream:#fff4e2; --dim:#b39a84; --red:#c0281e; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--cream); font:17px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  a { color:var(--gold); }
+  header { text-align:center; padding:28px 16px 18px; background:radial-gradient(ellipse at 50% 30%, #4a2208 0%, var(--bg) 70%);
+           border-bottom:6px dotted var(--red); }
+  header img { width:170px; height:auto; filter:drop-shadow(0 8px 18px #000a); }
+  h1 { margin:8px 0 4px; font:900 clamp(34px, 8vw, 64px)/1 Impact, "Arial Black", sans-serif; letter-spacing:1px;
+        color:var(--cream); text-shadow:0 0 18px #ff7a18aa; }
+  .tag { color:var(--gold); font-weight:700; margin:0; }
+  .how { max-width:720px; margin:10px auto 0; color:var(--dim); }
+  main { max-width:1100px; margin:0 auto; padding:20px 16px 40px; }
+  .top { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin-bottom:22px; }
+  .top h2, section h2 { margin:0 0 10px; font:900 26px/1.1 Impact, "Arial Black", sans-serif; color:var(--gold); letter-spacing:.5px; }
+  ol { list-style:none; margin:0; padding:0; columns:2 260px; }
+  li { display:flex; gap:10px; align-items:baseline; padding:4px 0; break-inside:avoid; }
+  .rank { color:var(--dim); width:1.6em; text-align:right; }
+  li a { text-decoration:none; color:var(--cream); font-weight:700; }
+  .n { margin-left:auto; color:var(--gold); white-space:nowrap; }
+  input[type=search] { width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:#0d0706;
+                        color:var(--cream); font-size:17px; margin-bottom:18px; }
+  section { margin-bottom:28px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:14px; }
+  .cup { margin:0; background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .cup img { display:block; width:100%; height:auto; }
+  .cup figcaption { padding:10px 12px 12px; display:grid; gap:2px; }
+  .cup b { overflow-wrap:anywhere; }
+  .cup span { color:var(--dim); font-size:14px; }
+  .get { font-size:14px; font-weight:700; }
+  .cup:target { outline:3px solid var(--gold); }
+  .empty { text-align:center; padding:30px 10px; }
+  footer { text-align:center; color:var(--dim); font-size:14px; padding:0 16px 40px; }
+</style>
+</head>
+<body>
+<header>
+  <img src="cup.png" alt="The Goldish Cup" width="406" height="507">
+  <h1>THE GOLDISH CUP</h1>
+  <p class="tag">Hall of Fame &middot; It's gold&hellip; ish.</p>
+  <p class="how">Live on <a href="https://www.youtube.com/@Standupish">Stand-Up-ish</a> every Monday, we play <b>The Sign Spin</b>: call a letter of
+  S-T-A-N-D-U-P-I-S-H in the chat, and if the light lands on it, you win a Goldish Cup. Find your name, download your cup,
+  and show it off. The season's biggest winner gets a real one in the mail.</p>
+</header>
+<main>
+  
+  
+  <section class="empty"><h2>The first Goldish Cups are awarded Monday, October 26, 2026.</h2><p>Watch live, call a letter in the chat, and your name could be here. <a href="https://www.youtube.com/@Standupish">Stand-Up-ish on YouTube</a></p></section>
+</main>
+<footer>Not real gold. Barely a cup. &middot; Want your name off this page? Say so in the comments on any
+<a href="https://www.youtube.com/@Standupish">Stand-Up-ish</a> video and we'll take it down.</footer>
+<script>
+  const q = document.getElementById('q');
+  if (q) q.oninput = () => {
+    const v = q.value.trim().toLowerCase().replace(/^@/, '');
+    document.querySelectorAll('.cup').forEach(c => c.hidden = v && !c.dataset.name.includes(v));
+  };
+</script>
+</body>
+</html>
